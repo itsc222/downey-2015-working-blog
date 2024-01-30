@@ -87,7 +87,7 @@ def countdown(n):
         print("Blastoff!")
     else:
         print(n)
-        time.sleep(1)
+        # time.sleep(1)
         countdown(n - 1)
 
 # countdown(10)
@@ -99,5 +99,60 @@ def print_n(s, n):
     print_n(s, n-1)
 
 print_n('Yes!', 10)
+
+def print_hello(n):
+    if n <= 0:
+        return(print("I'm done. Give me a cookie."))
+    print("hello!")
+    print_hello(n - 1)
+
+print_hello(7)
+
+import math
+
+try:
+
+    signal_power = 9
+    noise_power = 10
+
+    ratio = signal_power // noise_power
+
+    decibels = 10 * math.log10(ratio)
+
+    print(decibels)
+except ValueError as e:
+    print(f"there was an error: a {e}")
+
+try:
+
+    signal_power = 9
+    noise_power = 10
+
+    ratio = signal_power / noise_power
+
+    decibels = 10 * math.log10(ratio)
+
+    print(decibels)
+except ValueError as e:
+    print(f"there was an error: a {e}")
+
+import time
+
+gmt = time.time()
+
+print(gmt)
+
+current_year = 2024
+epoch_year = 1970
+
+passed_years = current_year - epoch_year
+leap_seconds = ((passed_years / 4) * 24 * 60 * 60)
+print(passed_years)
+
+passed_seconds = passed_years * 365 * 24 * 60 * 60
+
+print(passed_seconds)
+
+print((gmt - passed_seconds - leap_seconds) / 60 / 60 / 24)
 
 
